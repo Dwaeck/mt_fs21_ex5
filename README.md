@@ -26,10 +26,20 @@ Create a new virtualenv that uses Python 3. Please make sure to run this command
 Download and install required software:
 
     ./scripts/download_install_packages.sh
-
+    
 Download data:
 
     ./download_iwslt_2017_data.sh
+
+Sub-sample the training data. Do this for both source and target language.
+
+    python translation.py ./data/file > ./data/file_with_100k_sentence_pairs
+
+Preprocess training, developing and testing files of both source and target language in order to learn a BPE model.
+
+Use the following command to great a joint vocabulary for training a BPE model
+
+    python tools/joeynmt/scripts/build_vocab.py preprocessed_data_of_source_language preprossed_data_of_target_language --output_path ./data/joint_vocabulary
 
 Train a model:
 
