@@ -37,7 +37,7 @@ Sub-sample the training data. Do this for both source and target language.
 
 Preprocess training, developing and testing files of both source and target language in order to learn a BPE model.
 
-Use the following command to great a joint vocabulary for training a BPE model
+Use the following command to create a joint vocabulary for training a BPE model
 
     python tools/joeynmt/scripts/build_vocab.py preprocessed_data_of_source_language preprossed_data_of_target_language --output_path ./data/joint_vocabulary
 
